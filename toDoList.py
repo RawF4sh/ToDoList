@@ -3,6 +3,7 @@ from item import Item
 class ToDoList:
     def __init__(self):
         self.items = []
+        self.completed_items = []
         self.how_many_completed = 0
 
     #Function to check if an item (a task) is complete
@@ -10,6 +11,8 @@ class ToDoList:
         for item in self.items:
             if item.completed:
                 self.how_many_completed+=1
+                self.completed_items.append(self.items[item])
+                del self.items[item]
 
     #Function to add an item (task) to the list of items (the whole to-do list)
     def AddItem(self, Item):
