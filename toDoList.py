@@ -8,7 +8,7 @@ class ToDoList:
     #Function to check if an item (a task) is complete
     def CheckComplete(self):
         for item in self.items:
-            if item.complete:
+            if item.completed:
                 self.how_many_completed+=1
 
     #Function to add an item (task) to the list of items (the whole to-do list)
