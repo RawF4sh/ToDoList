@@ -17,4 +17,7 @@ while True:
     if start.lower() == "see list":
         print("\nHere is your current list of to-dos:")
         for item in task_list.items:
-            print(f"\t{item.item_name}, due at {item.time_due}")
+            print(f"\t{item.item_name}; due at {item.time_due}")
+
+    #if start.lower() == "visualize":
+        #needs filling in lol
