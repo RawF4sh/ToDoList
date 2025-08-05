@@ -22,3 +22,5 @@ class visualizeList:
 a = visualizeList("f")
 
 a.pieChartVisualize(5)
+
+plt.show()
