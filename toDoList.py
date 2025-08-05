@@ -9,3 +9,6 @@ class ToDoList:
         for item in self.items:
             if item.complete: #change when I have access to
                 self.how_many_completed+=1
+
+    def AddItem(self):
+        self.items.append(item.Item) #Does this work? Appending the whole class?
