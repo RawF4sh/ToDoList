@@ -1,3 +1,14 @@
+from toDoList import toDoList
+import matplotlib.pyplot as plt
+
 class visualizeList:
-    def __init__(self):
-        self.var = 0
+    def __init__(self, arrToDoList):
+        self.arrToDoList = arrToDoList
+
+
+    def piChartVisualize(self, listNum):
+        labels = 'Not Completed', 'Completed'
+        sizes = [len(self.arrToDoList[listNum])-self.arrToDoList[listNum].how_many_complete, self.arrToDoList[listNum].how_many_complete]
+
+        fig, ax = plt.subplots()
+        ax.pie(sizes, labels=labels)
