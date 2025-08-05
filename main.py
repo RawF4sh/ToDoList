@@ -5,7 +5,7 @@ from visualizeList import visualizeList
 task_list = ToDoList()
 while True:
     print("\nHello! What would you like to do?")
-    start = input('Enter "add task," "see list," or "visualize." ')
+    start = input('Enter "add task[1]," "see list[2]," or "visualize[3]." ')
 
     if start.lower() == "add task":
         new_name = input("\nWhat would you like the name of this task to be? ")
@@ -20,4 +20,5 @@ while True:
             print(f"\t{item.item_name}; due at {item.time_due}")
 
     #if start.lower() == "visualize":
-        #needs filling in lol
+
+
