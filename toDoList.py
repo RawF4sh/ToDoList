@@ -1,4 +1,4 @@
-# from item import Item
+from item import Item
 
 class ToDoList:
     def __init__(self):
@@ -12,5 +12,5 @@ class ToDoList:
                 self.how_many_completed+=1
 
     #Function to add an item (task) to the list of items (the whole to-do list)
-    def AddItem(self):
-        self.items.append(item.Item) #Does this work? Appending the whole class?
+    def AddItem(self, Item):
+        self.items.append(Item) #Does this work? Appending the whole class?
