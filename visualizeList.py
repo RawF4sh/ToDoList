@@ -7,10 +7,18 @@ class visualizeList:
 
 
     def pieChartVisualize(self, listNum):
-        labels = 'Not Completed', 'Completed'
-        sizes = [len(self.arrToDoList[listNum])-self.arrToDoList[listNum].how_many_completed, self.arrToDoList[listNum].how_many_completed]
-
         fig, ax = plt.subplots()
+
+        labels = 'Not Completed', 'Completed'
+        currentList = self.arrToDoList[listNum]
+        notComplete = len(currentList.items)-currentList.how_many_completed
+
+        sizes = [notComplete, currentList.how_many_completed]
+
+        wedges, texts, autotexts = ax.pie(sizes     , textprops=dict(color="w"))
+        ax.set_title("Today's To Do List")
+
+
         ax.pie(sizes, labels=labels)
 
 
