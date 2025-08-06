@@ -1,24 +1,34 @@
-#from toDoList import toDoList
+from toDoList import ToDoList
 import matplotlib.pyplot as plt
 
 class visualizeList:
-    def __init__(self, arrToDoList):
-        self.arrToDoList = arrToDoList
+    def __init__(self, toDoListItem ):
+        self.toDoListItem = toDoListItem
+        completedNames = ""
+        incompleteNames = ""
 
 
-    def pieChartVisualize(self, listNum):
-        #labels = 'Not Completed', 'Completed'
-        #sizes = [len(self.arrToDoList[listNum])-self.arrToDoList[listNum].how_many_complete, self.arrToDoList[listNum].how_many_complete]
+    def namesOfItems(self):
+        currentList = self.toDoListItem
+        for i in range(len(currentList.completed_items)):
+            self.completedNames += currentList.completed_items[i].item_name+"\n"
+        for i in range(len(currentList.items)):
+            self.incompleteNames+= currentList.completed_items[i].item_name+"\n"
 
-       #fig, ax = plt.subplots()
-        #ax.pie(sizes, labels=labels)
-        labels = 'Complete', 'Incomplete'
-        sizes = [5,15]
-
-        fig, ax = plt.subplots()
-        ax.pie(sizes, labels=labels)
+    def pieChartVisualize(self):
+        fig, ax = plt.subplots(figsize=(10, 5))
 
 
-a = visualizeList("f")
+        labels = 'Not Completed', 'Completed'
+        currentList = self.toDoListItem
+        notComplete = len(currentList.items)-currentList.how_many_completed
 
-a.pieChartVisualize(5)
+        items = self.incompleteNames, self.completedNames
+        sizes = [notComplete, currentList.how_many_completed]
+
+        wedges, texts = ax.pie(sizes, labels=labels)
+        ax.legend(wedges, items,
+                  title="Items",
+                  loc="right",
+                  bbox_to_anchor=(1, 0, 0.6, 1))
+        ax.set_title("Today's To Do List")
