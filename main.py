@@ -3,6 +3,8 @@ from toDoList import ToDoList
 from visualizeList import visualizeList
 
 task_list = ToDoList()
+pieChart= visualizeList(task_list)
+
 running = True
 while running:
     print("\nHello!")
@@ -19,8 +21,11 @@ while running:
         for item in task_list.items:
             print(f"\t{item.item_name}; due at {item.time_due}")
 
-    #elif start.lower() == "3":
-        #VISUALIZE: needs filling in lol
+    elif start.lower() == "3":
+        pieChart.setNamesOfItems()
+
+        pieChart.pieChartVisualize()
+
 
     elif start == "4":
         print("\nAll set? See you next time!")
