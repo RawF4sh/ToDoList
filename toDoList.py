@@ -18,6 +18,9 @@ class ToDoList:
     def AddItem(self, Item):
         self.items.append(Item)
 
+    def RemoveItem(self, index):
+        del self.items[index]
+
     #Cool lil thing so that it prints when an instance of the class is printed
     def __str__(self):
         return f"There are {len(self.items)} tasks on the to-do list. {self.how_many_completed} of those tasks has been completed."
