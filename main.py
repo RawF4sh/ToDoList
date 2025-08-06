@@ -62,8 +62,10 @@ while running:
 
     #Displays Pi Chart
     elif start.lower() == "5":
-
-        pieChart.pieChartVisualize()
+        if len(task_list.items)==0:
+            print("\nYou have not set any tasks. Visualization Unavailable")
+        else:
+            pieChart.pieChartVisualize()
 
     #Quit
     elif start == "6":
