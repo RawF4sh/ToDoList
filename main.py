@@ -12,7 +12,7 @@ while running:
     start = input('[1] Add task \n[2] Remove task \n[3] Complete task \n[4] See list \n[5] Visualize in chart \n[6] Quit \nWhat would you like to do? ')
     if start.lower() == "1":
         new_name = input("\nWhat would you like the name of this task to be? ")
-        print("Set the date for your task")
+        print("\nSet the date for your task")
         hour = int(input("What hour is this task due?(0-23) "))
         minute = int(input("What minute is this task due?(0-59) "))
         second = int(input("What second is this task due?(0-59) "))
