@@ -45,7 +45,7 @@ while running:
             print(f"\t{item.item_name}; due at {item.time_due}")
 
     elif start.lower() == "5":
-        pieChart.setNamesOfItems()
+        #pieChart.setNamesOfItems()
 
         pieChart.pieChartVisualize()
 
