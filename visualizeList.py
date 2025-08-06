@@ -4,17 +4,7 @@ import matplotlib.pyplot as plt
 class visualizeList:
     def __init__(self, toDoListItem ):
         self.toDoListItem = toDoListItem
-        #self.completedNames = ""
-        #self.incompleteNames = ""
 
-
-    #def setNamesOfItems(self):
-
-        #currentList = self.toDoListItem
-        #for i in range(len(currentList.completed_items)):
-            #self.completedNames += currentList.completed_items[i].item_name+"\n"
-        #for i in range(len(currentList.items)):
-           # self.incompleteNames+= currentList.items[i].item_name+"\n"
 
     def pieChartVisualize(self):
         fig, ax = plt.subplots(figsize=(10, 5))
@@ -22,8 +12,6 @@ class visualizeList:
         #Labels for pi chart and legend
         labels = ['Not Completed', 'Completed']
         currentList = self.toDoListItem
-
-        #items = [self.incompleteNames, self.completedNames]
 
         #How many not complete and complete items
         sizes = [len(currentList.items), currentList.how_many_completed]
