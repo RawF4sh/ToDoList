@@ -1,15 +1,22 @@
 from item import Item
 from toDoList import ToDoList
+import datetime
 from visualizeList import visualizeList
 
 task_list = ToDoList()
+pieChart= visualizeList(task_list)
+
 running = True
 while running:
     print("\nHello!")
     start = input('[1] Add task \n[2] Remove task \n[3] Complete task \n[4] See list \n[5] Visualize in chart \n[6] Quit \nWhat would you like to do? ')
     if start.lower() == "1":
         new_name = input("\nWhat would you like the name of this task to be? ")
-        new_due = int(input("What would you like to set the due date as? "))
+        print("Set the date for your task")
+        hour = int(input("What hour is this task due?(0-23) "))
+        minute = int(input("What minute is this task due?(0-59) "))
+        second = int(input("What second is this task due?(0-59) "))
+        new_due = datetime.time(hour, minute, second)
         new_item = Item(new_name, new_due)
         task_list.items.append(new_item)
         print("\nThe task has been added to your to-do list!")
@@ -37,11 +44,12 @@ while running:
         for item in task_list.items:
             print(f"\t{item.item_name}; due at {item.time_due}")
 
+    elif start.lower() == "5":
+        pieChart.setNamesOfItems()
 
-    #elif start.lower() == "3":
-        #VISUALIZE: needs filling in lol
+        pieChart.pieChartVisualize()
 
-    elif start == "5":
+    elif start == "6":
         print("\nAll set? See you next time!")
         running = False
 
