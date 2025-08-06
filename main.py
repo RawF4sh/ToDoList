@@ -22,10 +22,21 @@ while running:
         remove = int(input("Which task would you like to remove? "))
         del task_list.items[remove]
 
+    elif start == "3":
+        counter = 0
+        for length in task_list.items:
+            print(f"[{counter}] {length.item_name}")
+            counter += 1
+        done = int(input("Which task have you completed?"))
+        task_list.items[done].complete_item()
+        task_list.CheckComplete()
+
+
     elif start.lower() == "4":
         print("\nHere is your current list of to-dos:")
         for item in task_list.items:
             print(f"\t{item.item_name}; due at {item.time_due}")
+
 
     #elif start.lower() == "3":
         #VISUALIZE: needs filling in lol
