@@ -9,7 +9,7 @@ pieChart= visualizeList(task_list)
 running = True
 while running:
     print("\nHello!")
-    start = input('[1] Add task \n[2] See list \n[3] Visualize in chart \n[4] Quit \nWhat would you like to do? ')
+    start = input('[1] Add task \n[2] Remove task \n[3] Complete task \n[4] See list \n[5] Visualize in chart \n[6] Quit \nWhat would you like to do? ')
     if start.lower() == "1":
         new_name = input("\nWhat would you like the name of this task to be? ")
         print("Set the date for your task")
@@ -21,18 +21,35 @@ while running:
         task_list.items.append(new_item)
         print("\nThe task has been added to your to-do list!")
 
-    elif start.lower() == "2":
+    elif start == "2":
+        counter = 0
+        for length in task_list.items:
+            print(f"[{counter}] {length.item_name}")
+            counter+=1
+        remove = int(input("Which task would you like to remove? "))
+        del task_list.items[remove]
+
+    elif start == "3":
+        counter = 0
+        for length in task_list.items:
+            print(f"[{counter}] {length.item_name}")
+            counter += 1
+        done = int(input("Which task have you completed?"))
+        task_list.items[done].complete_item()
+        task_list.CheckComplete()
+
+
+    elif start.lower() == "4":
         print("\nHere is your current list of to-dos:")
         for item in task_list.items:
             print(f"\t{item.item_name}; due at {item.time_due}")
 
-    elif start.lower() == "3":
+    elif start.lower() == "5":
         pieChart.setNamesOfItems()
 
         pieChart.pieChartVisualize()
 
-
-    elif start == "4":
+    elif start == "6":
         print("\nAll set? See you next time!")
         running = False
 
