@@ -4,7 +4,7 @@ ToDoList is a project that was created in one day during a short-form Hackathon,
 
 ## What Is It?
 
-ToDoList is a fully python-based schedule assistant that keeps track of your to-dos (known as tasks). Our main goal was to create something to help those that struggle with productivity or procrastination, by making an **easy-to-use** tracker that can keep track, show, and visualize your to-dos.~~strikethrough text~~
+ToDoList is a fully python-based schedule assistant that keeps track of your to-dos (known as tasks). Our main goal was to create something to help those that struggle with productivity or procrastination, by making an **easy-to-use** tracker that can keep track, show, and visualize your to-dos.
 
 # Functions Available
 
