@@ -6,7 +6,7 @@ task_list = ToDoList()
 running = True
 while running:
     print("\nHello!")
-    start = input('[1] Add task \n[2] See list \n[3] Visualize in chart \n[4] Quit \nWhat would you like to do? ')
+    start = input('[1] Add task \n[2] Remove task \n[3] Complete task \n[4] See list \n[5] Visualize in chart \n[6] Quit \nWhat would you like to do? ')
     if start.lower() == "1":
         new_name = input("\nWhat would you like the name of this task to be? ")
         new_due = int(input("What would you like to set the due date as? "))
@@ -14,7 +14,15 @@ while running:
         task_list.items.append(new_item)
         print("\nThe task has been added to your to-do list!")
 
-    elif start.lower() == "2":
+    elif start == "2":
+        counter = 0
+        for length in task_list.items:
+            print(f"[{counter}] {length.item_name}")
+            counter+=1
+        remove = int(input("Which task would you like to remove? "))
+        del task_list.items[remove]
+
+    elif start.lower() == "4":
         print("\nHere is your current list of to-dos:")
         for item in task_list.items:
             print(f"\t{item.item_name}; due at {item.time_due}")
@@ -22,7 +30,7 @@ while running:
     #elif start.lower() == "3":
         #VISUALIZE: needs filling in lol
 
-    elif start == "4":
+    elif start == "5":
         print("\nAll set? See you next time!")
         running = False
 
