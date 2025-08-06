@@ -1,5 +1,6 @@
 from item import Item
 from toDoList import ToDoList
+import datetime
 from visualizeList import visualizeList
 
 task_list = ToDoList()
@@ -9,7 +10,11 @@ while running:
     start = input('[1] Add task \n[2] See list \n[3] Visualize in chart \n[4] Quit \nWhat would you like to do? ')
     if start.lower() == "1":
         new_name = input("\nWhat would you like the name of this task to be? ")
-        new_due = int(input("What would you like to set the due date as? "))
+        print("Set the date for your task")
+        hour = int(input("What hour is this task due?(0-23) "))
+        minute = int(input("What minute is this task due?(0-59) "))
+        second = int(input("What second is this task due?(0-59) "))
+        new_due = datetime.time(hour, minute, second)
         new_item = Item(new_name, new_due)
         task_list.items.append(new_item)
         print("\nThe task has been added to your to-do list!")
